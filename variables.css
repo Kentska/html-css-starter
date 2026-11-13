@@ -1,0 +1,78 @@
+:root {
+  /* ==========================================================================
+     1. FÄRGER (Anpassas efter installation)
+     ========================================================================== */
+  --color-brand: #2563eb;
+  --color-bg: #ffffff;
+  --color-text: #111827;
+  --color-brand-foreground: #ffffff;
+
+  /* Automatiska nyanser */
+  --color-brand-hover: color-mix(in srgb, var(--color-brand), black 15%);
+  --color-brand-active: color-mix(in srgb, var(--color-brand), black 25%);
+  --color-brand-subtle: color-mix(in srgb, var(--color-brand) 12%, var(--color-bg));
+  --color-surface: color-mix(in srgb, var(--color-text) 4%, var(--color-bg));
+  --color-text-muted: color-mix(in srgb, var(--color-text) 65%, var(--color-bg));
+  --color-border: color-mix(in srgb, var(--color-text) 15%, transparent);
+  --color-border-strong: color-mix(in srgb, var(--color-text) 45%, var(--color-bg));
+
+  /* ==========================================================================
+     2. TYPOGRAFI
+     ========================================================================== */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Font weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Font sizes (baserat på 1rem = 16px) */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;   /* 30px */
+
+  /* Line heights */
+  --leading-tight: 1.25;  /* Bra för rubriker */
+  --leading-normal: 1.5;  /* Bra för brödtext */
+  --leading-relaxed: 1.75;/* Bra för längre artiklar */
+
+  /* ==========================================================================
+     3. SPACING (För margin, padding och gap)
+     ========================================================================== */
+  --space-xs: 0.25rem;    /* 4px */
+  --space-sm: 0.5rem;     /* 8px */
+  --space-md: 1rem;       /* 16px */
+  --space-lg: 1.5rem;     /* 24px */
+  --space-xl: 2rem;       /* 32px */
+  --space-2xl: 3rem;      /* 48px */
+  --space-3xl: 4rem;      /* 64px */
+
+  /* ==========================================================================
+     4. BORDER RADIUS
+     ========================================================================== */
+  --radius-sm: 0.25rem;   /* 4px - små knappar, badges */
+  --radius-md: 0.5rem;    /* 8px - kort, inputfält */
+  --radius-lg: 0.75rem;   /* 12px - modaler, större sektioner */
+  --radius-full: 9999px;  /* Helt runda knappar eller avatarer */
+
+  /* ==========================================================================
+     5. BORDERS & SKUGGOR (px för skärpa och tillgänglighet)
+     ========================================================================== */
+  --border-width-thin: 1px;
+  --border-width-thick: 2px;
+
+  /* Tydlig fokusram för tangentbordsanvändare (WCAG) */
+  --focus-ring: 2px solid var(--color-brand);
+  --focus-offset: 2px;
+
+  /* Skuggor med diskret svärta */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
