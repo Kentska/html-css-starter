@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
   font-family: var(--font-sans);
   font-size: var(--text-base);
   line-height: var(--leading-normal);
@@ -49,7 +49,7 @@ p {
   text-wrap: pretty; /* Ger snyggare radbrytningar i brödtext */
 }
 
-ul, ol {
+ul[role="list"], ol[role="list"] {
   list-style: none;
 }
 
