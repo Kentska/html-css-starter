@@ -1,19 +1,26 @@
 body{
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-
+	flex-direction: column;
+	min-height: 100dvh;
 }
 
-
-
+/* 2. Låt huvudinnehållet växa och ta upp all ledig plats */
 main {
-	display: block;
-	width: 100%;
-	height: 100vh;
+  flex: 1;
+}
+/* 3. En återanvändbar container-klass för att centrera och begränsa 
+      bredden på innehållet inuti header, sektioner och footer */
+.container {
+  width: min(100% - 2rem, 75rem); /* Maxbredd 1200px + 1rem luft på sidorna på mobil */
+  margin-inline: auto;
+}
+/* main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	display: flex;
-	
+	width: 100%;
+	padding-inline: var(--space-md, 1rem);
 }
+*/
