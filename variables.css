@@ -1,20 +1,43 @@
 :root {
-  /* ==========================================================================
-     1. FÄRGER (Anpassas efter installation)
-     ========================================================================== */
-  --color-brand: #2563eb;
-  --color-bg: #ffffff;
-  --color-text: #111827;
-  --color-brand-foreground: #ffffff;
+  /* Aktiverar automatiskt stöd för både ljust och mörkt läge */
+  color-scheme: light dark;
 
-  /* Automatiska nyanser */
-  --color-brand-hover: color-mix(in srgb, var(--color-brand), black 15%);
-  --color-brand-active: color-mix(in srgb, var(--color-brand), black 25%);
-  --color-brand-subtle: color-mix(in srgb, var(--color-brand) 12%, var(--color-bg));
-  --color-surface: color-mix(in srgb, var(--color-text) 4%, var(--color-bg));
-  --color-text-muted: color-mix(in srgb, var(--color-text) 65%, var(--color-bg));
-  --color-border: color-mix(in srgb, var(--color-text) 15%, transparent);
-  --color-border-strong: color-mix(in srgb, var(--color-text) 45%, var(--color-bg));
+  /* ==========================================================================
+     1. FÄRGER (Ändra --hue-brand för att byta tema på hela sidan)
+     ========================================================================== */
+  --hue-brand: 250; /* 250 = Blå, 37 = Terrakotta, 145 = Grön, 340 = Rosa */
+
+  --color-brand: light-dark(
+    oklch(0.55 0.22 var(--hue-brand)),
+    oklch(0.70 0.18 var(--hue-brand))
+  );
+  --color-bg: light-dark(
+    oklch(0.99 0.005 var(--hue-brand)),
+    oklch(0.15 0.015 var(--hue-brand))
+  );
+  --color-text: light-dark(
+    oklch(0.20 0.015 var(--hue-brand)),
+    oklch(0.95 0.010 var(--hue-brand))
+  );
+  --color-brand-foreground: light-dark(
+    oklch(1 0 0),
+    oklch(0.15 0.015 var(--hue-brand))
+  );
+
+  /* Automatiska nyanser (anpassar sig efter ljust/mörkt läge) */
+  --color-brand-hover: light-dark(
+    color-mix(in oklch, var(--color-brand), black 15%),
+    color-mix(in oklch, var(--color-brand), white 15%)
+  );
+  --color-brand-active: light-dark(
+    color-mix(in oklch, var(--color-brand), black 25%),
+    color-mix(in oklch, var(--color-brand), white 25%)
+  );
+  --color-brand-subtle: color-mix(in oklch, var(--color-brand) 12%, var(--color-bg));
+  --color-surface: color-mix(in oklch, var(--color-text) 4%, var(--color-bg));
+  --color-text-muted: color-mix(in oklch, var(--color-text) 65%, var(--color-bg));
+  --color-border: color-mix(in oklch, var(--color-text) 15%, transparent);
+  --color-border-strong: color-mix(in oklch, var(--color-text) 45%, var(--color-bg));
 
   /* ==========================================================================
      2. TYPOGRAFI
@@ -36,6 +59,7 @@
   --text-xl: 1.25rem;     /* 20px */
   --text-2xl: 1.5rem;     /* 24px */
   --text-3xl: 1.875rem;   /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
 
   /* Line heights */
   --leading-tight: 1.25;  /* Bra för rubriker */
@@ -71,8 +95,17 @@
   --focus-ring: 2px solid var(--color-brand);
   --focus-offset: 2px;
 
-  /* Skuggor med diskret svärta */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  /* Skuggor med diskret svärta (lite starkare i dark mode för att synas) */
+  --shadow-sm: light-dark(
+    0 1px 2px 0 oklch(0 0 0 / 0.05),
+    0 1px 2px 0 oklch(0 0 0 / 0.3)
+  );
+  --shadow-md: light-dark(
+    0 4px 6px -1px oklch(0 0 0 / 0.1), 0 2px 4px -2px oklch(0 0 0 / 0.1),
+    0 4px 6px -1px oklch(0 0 0 / 0.4), 0 2px 4px -2px oklch(0 0 0 / 0.4)
+  );
+  --shadow-lg: light-dark(
+    0 10px 15px -3px oklch(0 0 0 / 0.1), 0 4px 6px -4px oklch(0 0 0 / 0.1),
+    0 10px 15px -3px oklch(0 0 0 / 0.5), 0 4px 6px -4px oklch(0 0 0 / 0.5)
+  );
 }
