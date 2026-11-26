@@ -1,0 +1,7 @@
+/* Om en användare har valt Mörkt läge och laddar om sidan kan skärmen hinna blinka till i vitt innan theme.js laddats klart.
+För att slippa det lägger du denna lilla inline-rad direkt i <head> (före dina CSS-länkar):*/
+
+<script>
+  const savedTheme = localStorage.getItem('theme-preference');
+  if (savedTheme) document.documentElement.style.colorScheme = savedTheme;
+</script>
